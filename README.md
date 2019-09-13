@@ -22,4 +22,5 @@
 # What I haven't done
 
 !-- Lazy load I've made only for one image - because I have few tags <img> in this template, but a lot of background-images. I will realize that in seem way as I did with simple img - replacing to real-img from dummy.
+
 !-- In mobile version of site I should put smaller images than in default size for PC. Google Page Speed decreases the rating because of it. It's easy to made, so I will have updated template
