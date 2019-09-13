@@ -1,0 +1,373 @@
+@import "bourbon"
+@import "vars.sass"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+
+*::-webkit-input-placeholder
+	color: #e6e6e6
+	opacity: 1
+
+*:-moz-placeholder
+	color: #e6e6e6
+	opacity: 1
+
+*::-moz-placeholder
+	color: #e6e6e6
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #e6e6e6
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #e6e6e6
+body input:required:valid,
+body textarea:required:valid
+	color: #e6e6e6
+
+// Main styles (Sticky footer required)
+
+main
+    min-height: 100vh
+
+// Section "Tours"
+
+.tours
+    padding-bottom: 100px
+    
+    .buttons
+        padding: 70px 15px
+        
+        
+    .tour-btn
+        color: #000
+        border: none
+        margin: 0 5px
+        font-size: 20px
+        cursor: pointer
+        background-color: transparent
+        font-family: "Arial Bold", $helvetica
+        
+        &.active
+            color: $accent-color
+        
+        &:not(.active)
+            @include hoverTransition
+            &:hover
+                color: $accent-color-hover
+    
+    // Slider
+    
+    .slider-wrap
+        position: relative
+        max-height: 600px
+        padding: 0 50px
+        
+        .btn-prev, .btn-next
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            outline: none
+            padding: 10px
+            width: 10px
+            height: 19px
+            border: none
+            cursor: pointer
+        .btn-prev
+            left: 25px
+            background: url("../img/icons/slider-prev.png") no-repeat
+            background-position: center center
+        .btn-next
+            right: 25px
+            background: url("../img/icons/slider-next.png") no-repeat
+            background-position: center center
+            
+    .slider__inner
+        flex-direction: row
+            
+    .slider
+        overflow: hidden
+        
+    .slide
+        display: inline-block
+        height: 202px
+        padding: 14px
+        background-color: #f8f7f7
+        border-radius: 10px
+        margin: 0 15px
+        
+        .slide__inner
+            height: 100%
+            
+        .img-wrap
+            flex: 0 0 187px
+            max-height: 100%
+            margin-right: 10px
+            border-radius: 10px
+            overflow: hidden
+            background-position: center center
+            background-repeat: no-repeat
+                
+        .descr
+            flex: 1
+            padding: 0 10px
+            flex-direction: column
+            justify-content: space-between
+            
+        h4
+            margin: 0
+            margin-top: 5px
+            font-size: 17px
+            line-height: 1.2
+            
+        .date
+            font-size: 14px
+            color: #3a3a3a
+
+        hr
+            border: none
+            height: 1px
+            background-color: rgba(106, 106, 106, 0.1)
+    
+        .text
+            color: #3a3a3a
+            font-size: 14px
+            line-height: 1.3
+            margin-bottom: 0
+            
+        .bottom
+            justify-content: space-between
+            
+        .price
+            font-size: 20px
+            color: #000
+            sup
+                color: #898989
+                font-size: 12px
+                
+        .link
+            @include hoverTransition
+            position: relative
+            height: 37px
+            width: 37px
+            border-radius: 50%
+            background-color: $accent-color
+            &::after
+                content: ""
+                display: block
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                width: 6px
+                height: 12px
+                background: url("../img/icons/arrow-right-dark.png") no-repeat
+            &:hover
+                background-color: $accent-color-hover
+                
+// Section "Advantages"
+
+.advantages
+    background-color: #f8f7f7
+    padding-bottom: 75px
+    padding-top: 25px
+    
+    h2
+        line-height: 1.3
+        margin-bottom: 50px
+        text-transform: uppercase
+        
+    .content
+        justify-content: space-between
+        align-items: center
+        
+    .img-wrap
+        display: inline-block
+        flex: 0 0 458px
+        img
+            max-width: 100%
+            
+    p
+        position: relative
+        max-width: 540px
+        margin-right: 50px
+        margin-left: 20px
+        line-height: 1.5
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            width: 1px
+            height: 100%
+            background-color: #e1e0e0
+            right: -46px
+            top: 0
+        
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            background-color: $accent-color
+            right: -49px
+            top: 0
+        
+// Section "Offer"
+
+.offer
+    padding-top: 40px 
+    padding-bottom: 70px
+    background: url("../img/footer-bg-1.jpg")
+    background-position: 0 600px
+    h2
+        color: #fff
+        text-transform: uppercase
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.54)
+    
+    .form
+        padding: 40px 20px
+        background-color: rgba(0, 0, 0, 0.6)
+        justify-content: space-around
+        align-items: center
+    
+    input, select
+        background-color: transparent
+        color: #e6e6e6
+        margin: 5px 5px
+        padding: 5px
+        border: none
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+    
+    .custom-select
+        margin: 0 10px
+        position: relative
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            right: 10px
+            top: 50%
+            transform: translateY(-50%)
+            width: 16px
+            height: 8px
+            background: url("../img/icons/arrow-down-light.png")
+        
+    select
+        width: 100%
+        padding-right: 35px;
+        color: #e5e5e5
+        cursor: pointer
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+            
+        option
+            color: #000
+        
+    .btn
+        border: none
+        cursor: pointer
+        padding: 15px 20px
+        
+// Footer
+
+footer
+    position: relative
+    background-color: #22334d
+    padding-top: 45px
+    padding-bottom: 30px
+    color: #fff
+    
+    hr
+        border: none
+        height: 1px
+        width: 93%
+        opacity: 0.1
+        margin: 18px 0
+        margin-left: 0
+        background-color: #fff
+        
+    h3
+        margin-bottom: 30px
+        margin-top: 10px
+    
+    ul
+        font-size: 14px
+        line-height: 2.2
+        
+        li
+            @include hoverTransition
+            line-height: 1.1
+            margin: 16px 0
+            
+            &:hover
+                color: $accent-color-hover
+    
+    .content
+        display: grid
+        grid-template-columns: 315px 1fr 1fr 280px
+        grid-gap: 100px
+    
+    .about
+        max-width: 320px
+        
+        .logo
+            width: 80%
+            
+            img
+                max-width: 100%
+        
+        p
+            font-size: 14px
+            line-height: 1.7
+            margin: 20px 0
+            
+        .site-author
+            color: #c2c2c2
+            
+            img
+                position: relative
+                top: 3px
+    
+    .contacts
+        max-width: 250px
+        
+        .info
+            p
+                margin: 5px 0
+                line-height: 1.3
+                
+            span
+                @include hoverTransition
+                font-size: 14px
+                color: #f3f3f3
+                opacity: 0.8
+                padding-left: 10px
+                &:hover
+                    opacity: 1
+                
+            img
+                height: 12px
+                
+            .phone span
+                padding-left: 8px
+                
+        .social a
+                @include hoverTransition
+                display: inline-block
+                opacity: 0.8
+                margin-right: 20px
+                
+                &:last-child
+                    margin-right: 0
+                
+                &:hover
+                    opacity: 1
+   
+
+//ALWAYS END
+@import "media"
