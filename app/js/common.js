@@ -24,6 +24,19 @@ $(document).ready(function(){
             menu.classList.toggle("show");
         }
     }
+    
+    // Slide menu if it contains too many items
+    menuSliding();
+    
+    function menuSliding() {
+        let menu = document.querySelector(".nav");
+        let listItems = menu.querySelectorAll(".nav > li");
+        
+        if (listItems.length > 6) {
+            console.log("Многовато, не?")
+        }
+    }
+    
 
     // Header background slider
     bgSlider();
@@ -251,7 +264,6 @@ $(document).ready(function(){
         foot.style.marginTop = -footHeight+"px";
         document.querySelector('main').style.paddingBottom = footHeight+"px";
     }
-    
     
     
 });
