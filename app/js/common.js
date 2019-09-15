@@ -71,10 +71,15 @@ $(document).ready(function(){
         }
     }
     
+    // Scroll re-stylung
+    jQuery(function()
+	{
+		jQuery('.advantages__text').jScrollPane();
+	});
+    
     // Waypoints
     $(".section__head h2").animated("fadeInLeft");
     $(".tours .tour-btn").animated("fadeInLeft");
-    $(".advantages p").animated("fadeInRight");
     $(".advantages .img-wrap").animated("fadeInLeft");
     $(".form").animated("fadeInUp");
     $("footer").waypoint(function() {
