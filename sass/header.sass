@@ -6,7 +6,7 @@
 
 html
     max-width: 1920px
-    overflow-x: hidden
+    overflow-x: initial
     margin: 0 auto
 
 body
@@ -96,6 +96,8 @@ header
     background-position: top
     
     .top
+        position: relative
+        z-index: 10
         justify-content: space-between
         
     .logo
@@ -180,7 +182,6 @@ header
             overflow: hidden
             max-height: 50px
             opacity: 0
-            z-index: 7
             
             li
                 display: block
@@ -195,7 +196,8 @@ header
             &.show
                 visibility: visible
                 opacity: 1
-                max-height: 600px
+                overflow-y: auto
+                max-height: 500px
             
                 
         .submenu-btn
